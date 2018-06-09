@@ -26,6 +26,5 @@ class Publication(models.Model):
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
 
     def __str__(self):
-        # authors_list = [author.last_name for author in self.author.all()]
-        # author_text = ' '.join(tuple(authors_list))
+
         return '{}'.format(self.title)

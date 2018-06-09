@@ -1,18 +1,24 @@
+{% extends 'pubapp/base.html' %}
+
+{% block body %}
+
 <h1>
-    {{ venue.title }}
+    {{ venue.name }}
 </h1>
     
 <p>
     Held in {{ venue.location }} on {{ venue.date }}.
 </p>
 
-<!-- <p>
+<p>
     Publications Presented:
     <ul>
-        {% for pub in venue.publications.all() %}
+        {% for pub in venue.publication_set.all %}
             <li>
                 {{ pub.title }}
             </li>
         {% endfor %}
     </ul>
-</p> -->
+</p>
+
+{% endblock %}

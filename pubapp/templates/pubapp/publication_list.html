@@ -1,3 +1,7 @@
+{% extends 'pubapp/base.html' %}
+
+{% block body %}
+
 {% for publication in publication_list %}
     <h1>
         {{ publication.title }}
@@ -15,3 +19,5 @@
         </ul>
     </p>
 {% endfor %}
+
+{% endblock %}

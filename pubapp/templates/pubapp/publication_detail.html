@@ -1,3 +1,7 @@
+{% extends 'pubapp/base.html' %}
+
+{% block body %}
+
 <h1>
     {{ publication.title }}
 </h1>
@@ -12,3 +16,5 @@
 <p>
     Presented at {{ publication.venue }} in {{ publication.date }}.
 </p>
+
+{% endblock %}
