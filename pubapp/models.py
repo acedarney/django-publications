@@ -6,11 +6,17 @@ class Author(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
 
+    def __str__(self):
+        return '{} {}'.format(self.first_name, self.last_name)
+
 
 class Venue(models.Model):
     name = models.CharField(max_length=120)
     location = models.CharField(max_length=120)
     date = models.DateField()
+
+    def __str__(self):
+        return '{}'.format(self.name)
 
 
 class Publication(models.Model):
@@ -18,3 +24,8 @@ class Publication(models.Model):
     author = models.ManyToManyField(Author)
     date = models.IntegerField()
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
+
+    def __str__(self):
+        # authors_list = [author.last_name for author in self.author.all()]
+        # author_text = ' '.join(tuple(authors_list))
+        return '{}'.format(self.title)

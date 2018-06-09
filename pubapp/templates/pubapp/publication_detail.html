@@ -1,0 +1,14 @@
+<h1>
+    {{ publication.title }}
+</h1>
+<h3>
+    {% for author in publication.author.all %}
+        <a href='{% url "author_detail" pk=author.pk %}'>
+            {{ author }} 
+        </a>
+    {% endfor %}
+</h3>
+
+<p>
+    Presented at {{ publication.venue }} in {{ publication.date }}.
+</p>

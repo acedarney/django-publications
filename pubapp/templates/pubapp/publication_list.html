@@ -1,4 +1,17 @@
 {% for publication in publication_list %}
-    <h1>{{ publication.title }}</h1>
-    <p>{{ publication.author }}</p>
+    <h1>
+        {{ publication.title }}
+    </h1>
+    <p>
+        Author(s):
+        <ul>
+            {% for author in publication.author.all %}
+                <li> 
+                    <a href='{% url "author_detail" pk=author.pk %}'>
+                        {{ author }} 
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </p>
 {% endfor %}

@@ -1,0 +1,15 @@
+<h1>
+        {{ author.first_name }} {{ author.last_name }}
+</h1>
+
+<p>
+    <ul>
+        {% for pub in author.publication_set.all %}
+            <li>
+                <a href='{% url "pub_detail" pk=pub.pk %}'>
+                    {{ pub.title }} 
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</p>
