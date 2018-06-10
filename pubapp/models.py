@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Author(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -26,5 +24,4 @@ class Publication(models.Model):
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
 
     def __str__(self):
-
         return '{}'.format(self.title)
